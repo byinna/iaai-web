@@ -31,10 +31,10 @@ with Playwright at 375 / 768 / 1280 and check the browser console is clean.
 - **Server components by default.** Only `CloudHero.tsx` and `RevealController.tsx` are
   `"use client"` — keep it that way unless a change genuinely needs the client.
 - **Design tokens** live as CSS custom properties in `app/globals.css` (`--cream`,
-  `--blue`, `--ink`, `--red`, `--redshadow`, `--paper`, `--lightblue`, `--night`). Use
-  them; don't hardcode hex in components. Styling is class-based in `globals.css`, not
-  inline. Note: the page (`body`) background is `--night` (deep sea-navy) — the gutter
-  around the 1280px `.frame`; `--cream` is retained as a token but no longer the page bg.
+  `--blue`, `--ink`, `--red`, `--redshadow`, `--paper`, `--lightblue`). Use them; don't
+  hardcode hex in components. Styling is class-based in `globals.css`, not inline. The
+  page (`body`) background is `--cream` — the warm risograph-paper gutter around the
+  1280px `.frame`. (A deep-navy gutter was tried in V1.1 and reverted — cream stays.)
 - **Scroll reveal:** `RevealController` adds `.reveal-ready` and reveals `[data-reveal]`
   elements on scroll (staggering `[data-card]`), re-firing the `titleReg` animation on
   `[data-snap]` headings. Consequence: below-the-fold sections render at `opacity:0`

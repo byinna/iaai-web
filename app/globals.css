@@ -6,7 +6,6 @@
   --redshadow: #7e2013;
   --paper: #f2e3d5;   /* light cream text */
   --lightblue: #b8d9ec;
-  --night: #0c2a3e;   /* deep sea-navy page background */
   --border: 3px solid var(--ink);
 }
 
@@ -15,7 +14,7 @@ html { scroll-behavior: smooth; }
 html, body { margin: 0; padding: 0; }
 
 body {
-  background: var(--night);
+  background: var(--cream);
   color: var(--paper);
   font-family: var(--font-mono), 'Space Mono', monospace;
   -webkit-font-smoothing: antialiased;
