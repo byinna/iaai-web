@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#3e88b4"/>
+  <rect x="3" y="3" width="58" height="58" fill="none" stroke="#26150f" stroke-width="5"/>
+  <text x="32" y="30" text-anchor="middle" font-family="'Courier New', monospace" font-weight="900" font-size="26" fill="#e4573d">IA</text>
+  <text x="32" y="55" text-anchor="middle" font-family="'Courier New', monospace" font-weight="900" font-size="26" fill="#f2e3d5">AI</text>
+</svg>
