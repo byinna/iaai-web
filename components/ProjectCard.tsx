@@ -21,8 +21,13 @@ export default function ProjectCard({ project }: { project: Project }) {
         <p className="card__desc">{project.desc}</p>
       </div>
       {project.href && (
-        <a className="card__link" href={project.href}>
-          View {project.name}
+        <a
+          className="card__link"
+          href={project.href}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View {project.name} (opens in a new tab)
         </a>
       )}
     </article>
