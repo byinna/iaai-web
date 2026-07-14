@@ -37,3 +37,6 @@ skills-lock.json
 
 # Playwright MCP screenshots (local only)
 .playwright-mcp/
+
+# Local design scratch (regen assets, not deployed)
+/design/
