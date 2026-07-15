@@ -57,10 +57,30 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Ingrid Ashida",
+  url: SITE,
+  image: `${SITE}/headshot.jpg`,
+  jobTitle: "AI Consultant & Builder",
+  knowsAbout: ["AI", "RAG", "rapid prototyping", "web applications"],
+  sameAs: [
+    "https://www.linkedin.com/in/ingrid-ashida/",
+    "https://github.com/byinna",
+  ],
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${display.variable} ${mono.variable}`}>
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
