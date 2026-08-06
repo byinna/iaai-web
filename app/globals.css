@@ -164,12 +164,11 @@ img, video { display: block; max-width: 100%; }
   padding: 15px 2px; border-bottom: 1px solid var(--ink);
 }
 .index__row:last-child { border-bottom: 2px solid var(--ink); }
-/* highlighter: a hard-edged Riso Yellow bar, fractionally off-register —
-   instant two-color flip on hover, no motion */
+/* highlighter: a hard-edged Riso Yellow bar — instant two-color flip on
+   hover, no motion, no tilt */
 .index__row::before {
-  content: ""; position: absolute; inset: 6px -8px 6px -8px;
+  content: ""; position: absolute; inset: 6px -2px 6px -2px;
   background: transparent;
-  transform: rotate(-0.4deg);
   pointer-events: none;
 }
 .index__row:hover::before { background: var(--highlight); }
