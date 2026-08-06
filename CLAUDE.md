@@ -31,8 +31,11 @@ with Playwright at 375 / 768 / 1280 and check the browser console is clean.
 - **Server components by default.** Only `CloudHero.tsx` and `RevealController.tsx` are
   `"use client"` — keep it that way unless a change genuinely needs the client.
 - **Design tokens** live as CSS custom properties in `app/globals.css` (`--cream`,
-  `--blue`, `--ink`, `--red`, `--redshadow`, `--paper`, `--lightblue`). Use them; don't
-  hardcode hex in components. Styling is class-based in `globals.css`, not inline. The
+  `--blue`, `--ink`, `--red`, `--redshadow`, `--paper`, `--lightblue`, `--highlight`).
+  Use them; don't hardcode hex in components. `--highlight` (#ffe800, Riso Yellow ink)
+  is scoped to highlighter strokes only — keep it straight/axis-aligned; Ingrid cut
+  both an animated sweep and an off-register tilt as "too much" with a color this loud.
+  It's not yet in the brand kit (`~/Developer/iaai-design`). Styling is class-based in `globals.css`, not inline. The
   page (`body`) background is `--cream` — the warm risograph-paper gutter around the
   1280px `.frame`. (A deep-navy gutter was tried in V1.1 and reverted — cream stays.)
 - **Scroll reveal:** `RevealController` adds `.reveal-ready` and reveals `[data-reveal]`
@@ -57,23 +60,40 @@ with Playwright at 375 / 768 / 1280 and check the browser console is clean.
   patent imagery). When changing project copy, pull from those notes rather than inventing
   claims. Exception: **Hey Buoy!** is sourced from `~/Developer/fishing/` (README/PRD) — a
   personal single-client marine app; keep its copy free of scale/user claims.
-- The **UAE Business Gateway** tile links out (`href`) to the live site
-  `https://gateway.ia-ai.pro` (opens in a new tab) — it's the only clickable tile. Linking
+- The **UAE Business Gateway** tile links out (`href`) to the live assistant at
+  `https://gateway.ia-ai.pro/chat` (opens in a new tab) — it's the only clickable
+  tile. Deliberately `/chat`, not the root: the mock site around it has dead sections. Linking
   to that URL is fine; the caution about not touching its **DNS record** still stands.
-- Tile images: `public/work/`. Headshot: `public/headshot.jpg`. Contact links (email,
+- Tile images: `public/work/`, all 2:1 (~1600×800). The **Hey Buoy!** tile is the brand
+  illustration rendered (not generated) from exhibit 3d of the Claude Design project
+  `a1ecb0e9-bd23-4e10-a682-ddbfcb41bc40` (`Project Cards.dc.html`) — the `.dc.html` is
+  plain HTML inside an `<x-dc>` wrapper; flatten it, screenshot at a 2:1 crop.
+  Headshot: `public/headshot.jpg`. Contact links (email,
   LinkedIn `in/ingrid-ashida`, GitHub `byinna`) are in `components/Contact.tsx`.
 
 ## The cloud assets (regenerating)
 
 Hero cloud pipeline: Higgsfield `recraft_v4_1` (palette-pinned image) → `kling3_0_turbo`
-(image-to-video) → ffmpeg boomerang loop → `public/clouds/cloud-hero.mp4`, with
-`cloud-hero.webp`/`-poster.webp` as fallbacks and `cloud-band.webp` for the section
-bands. To regenerate, keep the palette pinned to the tokens above and re-encode small
-(the mp4 is a decorative background — target a few MB, `-crf ~30`, scale ~1152w).
+(image-to-video) → ffmpeg forward loop → `public/clouds/cloud-hero.mp4`, with
+`cloud-hero.webp`/`-poster.webp` as fallbacks. To regenerate, keep the palette pinned to
+the tokens above and re-encode small (the mp4 is a decorative background — target a few
+MB, `-crf ~30`, scale ~1152w). **`cloud-band.webp` is NOT generated**: it's a 3:1 crop
+of the original ink-cloud art at `~/Documents/IA-AI/Clouds/ink-clouds-2K.png`
+(crop 2632×878 @ x100,y130 — inset past the frame lines — scaled to 2000w, webp q82).
+One file serves both bands: the work head shows its center, the bottom-anchored footer
+shows the ribbon trails.
 
 ## Gotchas
 
 - Next 16, React 19 — some Next 15 guidance is stale.
+- **Dev image cache**: replacing a `public/` image in place keeps serving the old art —
+  the dev optimizer cache lives at `.next/dev/cache/images` (4h TTL; note `dev/`, not
+  the old `.next/cache/images`). Purge it and use a fresh browser tab. Production
+  (Vercel image CDN) revalidates on deploy, so this is dev-only.
+- **JSX eats the space after an inline tag** (`<b>AI</b> Builder` renders "AIBuilder")
+  — use an explicit `&nbsp;`.
+- Port 3000 is usually taken by the long-running NAYMLIS dev server (separate project —
+  don't kill it); `npm run dev` lands on 3001.
 - The original design lives in a Claude Design project (`.dc.html`, custom `<x-dc>`
   runtime) — not the source of truth for code; this repo is. DesignSync `get_file`
   truncates files >256 KiB, which is why cloud art was generated rather than downloaded.
