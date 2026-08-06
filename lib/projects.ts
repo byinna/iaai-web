@@ -43,7 +43,7 @@ export const projects: Project[] = [
     desc: "A live UAE-regulatory AI assistant whose knowledge base is editable from Telegram — DM a PDF, link, or photo; one tap adds it to the live RAG.",
     image: "/work/gateway.png",
     alt: "UAE Business Gateway production landing page for the regulatory AI assistant.",
-    href: "https://gateway.ia-ai.pro",
+    href: "https://gateway.ia-ai.pro/chat",
   },
   {
     n: "04",
@@ -51,6 +51,6 @@ export const projects: Project[] = [
     tag: "APP · MARINE AI",
     desc: "A mobile-first marine app that turns dense NOAA forecast grids into one plain-language verdict — Go, Caution, or No-Go. A deterministic rule engine makes the call; Claude only parses the question and narrates the marginal cases. Voice-first, with an animated buoy that glows the verdict. Built solo — React 19 / Vite, a Hono API, MapLibre.",
     image: "/work/heybuoy.png",
-    alt: "Hey Buoy! marine conditions app: a navy sea map with animated wind particles and a bold NO-GO verdict with wave, period, wind, and tide readouts.",
+    alt: "Hey Buoy! brand illustration: a smiling red buoy on flat painted waves, a green GO sticker, the verdict “Fine early. Wind builds on the afternoon ebb.” and a live buoy-data readout.",
   },
 ];
