@@ -96,16 +96,7 @@ img, video { display: block; max-width: 100%; }
   border-right: var(--border);
   background: var(--blue);
 }
-.hero__topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 12px;
-}
-.hero__name { font: 700 13px/1 var(--font-mono), monospace; letter-spacing: 0.1em; color: var(--paper); }
-.hero__role { font: 400 12px/1 var(--font-mono), monospace; letter-spacing: 0.1em; color: var(--lightblue); }
-
-.hero__lockup { display: flex; flex-direction: column; gap: 24px; }
+.hero__lockup { display: flex; flex-direction: column; gap: 24px; margin: auto 0; }
 .hero__title {
   margin: 0;
   font-family: var(--font-display), 'Rubik Mono One', monospace;
@@ -115,7 +106,9 @@ img, video { display: block; max-width: 100%; }
   text-shadow: 6px 6px 0 var(--redshadow);
   animation: titleReg 0.9s 0.15s both;
 }
-.hero__intro { margin: 0; font: 400 15px/1.6 var(--font-mono), monospace; color: var(--paper); max-width: 290px; }
+.hero__sub { display: flex; flex-direction: column; gap: 8px; }
+.hero__subtitle { margin: 0; font: 700 20px/1.35 var(--font-mono), monospace; color: var(--paper); }
+.hero__intro { margin: 0; font: 400 17px/1.6 var(--font-mono), monospace; color: var(--paper); max-width: 340px; }
 
 .nav { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
 .nav a {
@@ -265,6 +258,8 @@ img, video { display: block; max-width: 100%; }
 @media (max-width: 900px) {
   .hero { flex-direction: column; min-height: 0; }
   .hero__text { width: 100%; border-right: none; border-bottom: var(--border); gap: 28px; padding: 28px 24px; }
+  .hero__sep { display: none; }
+  .hero__sub2 { display: block; }
   .hero__cloud { order: -1; height: 220px; flex: none; }
   .hero__intro { max-width: none; }
 
