@@ -205,12 +205,12 @@ img, video { display: block; max-width: 100%; }
 .card__imgwrap { position: relative; width: 100%; aspect-ratio: 2 / 1; border-bottom: var(--border); overflow: hidden; }
 .card__imgwrap img { width: 100%; height: 100%; object-fit: cover; filter: saturate(0.62); transition: filter 0.35s ease; }
 .card:hover .card__imgwrap img, .card:focus-within .card__imgwrap img { filter: none; }
-.card__body { padding: 20px 22px; display: flex; flex-direction: column; gap: 10px; }
+.card__body { flex: 1; background: var(--paper); padding: 20px 22px; display: flex; flex-direction: column; gap: 10px; }
 .card__meta { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
-.card__n { font: 700 12px/1 var(--font-mono), monospace; letter-spacing: 0.14em; color: var(--red); }
-.card__tag { font: 700 11px/1 var(--font-mono), monospace; letter-spacing: 0.12em; color: var(--lightblue); text-align: right; }
-.card__name { margin: 0; font: 400 22px/1.05 var(--font-display), 'Rubik Mono One', monospace; color: var(--red); }
-.card__desc { margin: 0; font: 400 14px/1.6 var(--font-mono), monospace; color: var(--paper); }
+.card__n { font: 700 12px/1 var(--font-mono), monospace; letter-spacing: 0.14em; color: var(--redshadow); }
+.card__tag { font: 700 11px/1 var(--font-mono), monospace; letter-spacing: 0.12em; color: var(--blue); text-align: right; }
+.card__name { margin: 0; font: 400 22px/1.05 var(--font-display), 'Rubik Mono One', monospace; color: var(--redshadow); }
+.card__desc { margin: 0; font: 400 16px/1.6 var(--font-mono), monospace; color: var(--ink); }
 .card__link { position: absolute; inset: 0; text-indent: -9999px; overflow: hidden; }
 
 /* ------------------------------------------------------------------ */
