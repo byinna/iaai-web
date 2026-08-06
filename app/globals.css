@@ -273,7 +273,7 @@ img, video { display: block; max-width: 100%; }
 
   .work__head { flex-direction: column; height: auto; }
   .work__head-text { width: 100%; border-right: none; border-bottom: var(--border); padding: 24px; }
-  .work__head-cloud { height: 140px; }
+  .work__head-cloud { height: 140px; flex: none; }
   .work__grid { grid-template-columns: 1fr; gap: 16px; padding: 16px; }
 
   .contact { align-items: flex-start; }
